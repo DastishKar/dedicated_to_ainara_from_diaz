@@ -68,11 +68,32 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a0f; f
   transition: transform 0.9s cubic-bezier(0.645,0.045,0.355,1.000); transform: rotateY(0deg);
 }
 .page.flipped { transform: rotateY(-180deg); }
-.page-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 16px; position: relative; backface-visibility: hidden; }
+.page-inner { 
+  width: 100%; 
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 16px; 
+}
 .page-back { position: absolute; inset: 0; background: #fdf6f9; display: flex; align-items: center; justify-content: center; padding: 16px; transform: rotateY(180deg); backface-visibility: hidden; border-radius: 4px 16px 16px 4px; }
 .page-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
 .page-photo-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg,#f5d0e0,#e8b4cb); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #c06080; font-family: 'Poppins',sans-serif; font-size: 13px; font-weight: 300; letter-spacing: 2px; }
-.two-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; height: 100%; }
+.two-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.two-photos img,
+.two-photos .page-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
 .two-photos img, .two-photos .page-photo-placeholder { border-radius: 6px; }
 
 .album-cover { position: absolute; inset: 0; background: linear-gradient(135deg,#2d1a2e,#1a0f1e); border-radius: 4px 16px 16px 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; z-index: 5; box-shadow: 6px 6px 40px rgba(0,0,0,0.7); transition: transform 0.9s cubic-bezier(0.645,0.045,0.355,1.000); transform-origin: left center; }
@@ -194,7 +215,7 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a0f; f
         <div class="page-back">
           <div class="page-photo-placeholder" style="flex-direction:column;gap:12px">
             <span style="font-size:2.5rem">💕</span>
-            <div style="font-family:'Dancing Script',cursive;font-size:1.3rem;color:#c06080;text-align:center">
+            <div style="font-family:    'Dancing Script',cursive;font-size:1.3rem;color:#c06080;text-align:center">
               I love you so much,<br>Ainara ❤️
             </div>
           </div>
